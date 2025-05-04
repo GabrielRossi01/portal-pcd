@@ -5,6 +5,8 @@ import '../globals.css';
 import Image from 'next/image';
 import { TipoLogin } from '@/types/TipoLogin';
 import { useRouter } from 'next/navigation';
+import { FaEnvelope, FaLock } from 'react-icons/fa'; // Importando os ícones
+import Link from 'next/link';
 
 export default function Login() {
 
@@ -15,7 +17,6 @@ export default function Login() {
   const [error, setError] = useState<string>('');
 
   // Hook do Next.js para navegação - React Router
-  // O useRouter é um hook que permite acessar o objeto de roteamento do Next.js, facilitando a navegação entre páginas
   const router = useRouter();
 
   // Função para lidar com o envio do formulário de login
@@ -46,8 +47,6 @@ export default function Login() {
     setError('Credenciais inválidas. Tente novamente.');
   };
 
-
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -55,9 +54,8 @@ export default function Login() {
       [name]: value,
     })); // atualiza o estado do formulário
 
-    setError(''); // limpa o erro quando o usuário comça a digitar
+    setError(''); // limpa o erro quando o usuário começa a digitar
   };
-
 
   return (
     <div className='flex items-center justify-center h-screen px-4'>
@@ -71,23 +69,31 @@ export default function Login() {
           height={200}
           className='mb-9 mt-9' />
 
-        <input
-          type="email"
-          placeholder="Email"
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-          className='border border-blue-950 p-2 mb-4 rounded w-full max-w-sm'
-        />
+        {/* Campo de E-mail */}
+        <div className='mb-4 flex items-center border border-blue-950 p-2 rounded w-full max-w-sm'>
+          <FaEnvelope className="text-blue-950 text-2xl mr-3" /> {/* Ícone de E-mail */}
+          <input
+            type="email"
+            placeholder="E-mail"
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
+            className='w-full border-none outline-none'
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Senha"
-          name='senha'
-          value={formData.senha}
-          onChange={handleChange}
-          className='border border-blue-950 p-2 mb-4 rounded w-full max-w-sm'
-        />
+        {/* Campo de Senha */}
+        <div className='mb-4 flex items-center border border-blue-950 p-2 rounded w-full max-w-sm'>
+          <FaLock className="text-blue-950 text-2xl mr-3" /> {/* Ícone de Senha */}
+          <input
+            type="password"
+            placeholder="Senha"
+            name='senha'
+            value={formData.senha}
+            onChange={handleChange}
+            className='w-full border-none outline-none'
+          />
+        </div>
 
         {/* Mensagem de erro se houver */}
         {error && <p className='text-red-500 text-sm font-medium mb-3'>{error}</p>} {/* exibe mensagem de erro em vermelho */}
@@ -100,7 +106,7 @@ export default function Login() {
         </button>
 
         <p className='mt-4 text-blue-950 text-center'>
-          Não tem uma conta? <a href="/cad-user" className='underline'>Cadastre-se</a>
+          Não tem uma conta? <Link href="/cad-user" className='text-blue-950 font-semibold hover:underline'>Cadastre-se</Link>
         </p>
 
       </form>

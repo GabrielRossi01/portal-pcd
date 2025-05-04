@@ -17,7 +17,7 @@ export default function Header() {
                         alt="Logo do site"
                         width={180}
                         height={180}
-                        className="transition-transform duration-300 hover:scale-105 cursor-pointer"
+                        className="cursor-pointer"
                     />
                 </Link>
 
@@ -66,7 +66,7 @@ export default function Header() {
 
             {/* Menu de navegação exibido no mobile quando o menu está aberto */}
             {menuOpen && (
-                <nav className="md:hidden px-6 pb-4">
+                <nav className="md:hidden px-6 pb-10">
                     <ul className="flex flex-col gap-4 text-center font-sans">
                         <li className="transition-all duration-300 hover:text-gray-400">
                             <Link href="/home">Home</Link>

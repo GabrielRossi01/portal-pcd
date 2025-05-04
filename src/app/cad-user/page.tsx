@@ -2,7 +2,9 @@
 
 import { TipoCadastro } from '@/types/TipoCadastro';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 
 export default function cadUser() {
@@ -61,23 +63,30 @@ export default function cadUser() {
           height={200}
           className='mb-9 mt-9' />
 
-        <input
-          type="text"
-          placeholder="Email"
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-          className='border border-blue-950 p-2 mb-4 rounded w-full max-w-sm'
-        />
+        <div className='mb-4 flex items-center border border-blue-950 p-2 rounded w-full max-w-sm'>
+          <FaEnvelope className="text-blue-950 text-2xl mr-3" /> {/* Ícone de E-mail */}
+          <input
+            type="text"
+            placeholder="E-mail"
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
+            className='w-full border-none outline-none'
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Senha"
-          name='senha'
-          value={formData.senha}
-          onChange={handleChange}
-          className='border border-blue-950 p-2 mb-4 rounded w-full max-w-sm'
-        />
+        <div className="mb-4 flex items-center border border-blue-950 p-2 rounded w-full max-w-sm">
+          <FaLock className="text-blue-950 text-2xl mr-3" /> {/* Ícone de Senha */}
+          <input
+            type="password"
+            placeholder="Senha"
+            name='senha'
+            value={formData.senha}
+            onChange={handleChange}
+            className='w-full border-none outline-none'
+          />
+        </div>
+
 
         {/* Exibe mensagem de erro, se houver */}
         {error && <p className="text-red-500 text-sm font-medium mb-3">{error}</p>}
@@ -90,7 +99,7 @@ export default function cadUser() {
         </button>
 
         <p className='mt-4 text-blue-950 text-center'>
-          Já possui uma conta? <a href="/login" className='underline'>Faça login</a>
+          Já possui uma conta? <Link href="/login" className='text-blue-950 font-semibold hover:underline'>Faça login</Link>
         </p>
       </form>
     </div>
