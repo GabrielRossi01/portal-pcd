@@ -40,7 +40,9 @@ export default function cadUser() {
   };
 
   // Função para atualizar o estado do formulário quando o usuário digita
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { //A expressão React.ChangeEvent<HTMLInputElement> é uma tipagem TypeScript 
+    // que indica o tipo de evento que está sendo tratado em um componente React, geralmente em campos de formulário.
+
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,

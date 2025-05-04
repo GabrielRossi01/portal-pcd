@@ -45,7 +45,7 @@ export default function UpdatePage() {
     }
 
     try {
-      localStorage.setItem('userData', JSON.stringify(userData));
+      localStorage.setItem('userData', JSON.stringify(userData)); // converte um objeto JavaScript para uma string JSON
       setNotification('Dados atualizados com sucesso!');
       setError(null);
       setUserData({ email: '', senha: '' }); // limpa os campos

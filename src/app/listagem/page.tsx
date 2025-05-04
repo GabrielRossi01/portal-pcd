@@ -1,4 +1,5 @@
 'use client'
+
 import { TipoListagem } from '@/types/TipoListagem';
 import React, { useState } from 'react'
 import { FaStethoscope, FaGavel, FaBriefcase, FaGraduationCap, FaBus, FaUsers, FaTools, FaExclamationTriangle } from 'react-icons/fa' // Importando os ícones do react-icons

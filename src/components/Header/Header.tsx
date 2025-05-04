@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -67,7 +68,7 @@ export default function Header() {
             {/* Menu de navegação exibido no mobile quando o menu está aberto */}
             {menuOpen && (
                 <nav className="md:hidden px-6 pb-10">
-                    <ul className="flex flex-col gap-4 text-center font-sans">
+                    <ul className="flex flex-col gap-5 text-center font-sans">
                         <li className="transition-all duration-300 hover:text-gray-400">
                             <Link href="/home">Home</Link>
                         </li>
