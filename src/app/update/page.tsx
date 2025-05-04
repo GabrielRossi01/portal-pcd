@@ -10,7 +10,7 @@ export default function UpdatePage() {
   });
 
   const [notification, setNotification] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [, setError] = useState<string | null>(null);
 
   // Carrega os dados salvos no localStorage ao abrir a página
   // useEffect(() => {
