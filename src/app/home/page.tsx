@@ -15,9 +15,10 @@ export default function Home() {
     if (!estaAutenticado) {
       router.push('/cad-user')
     }
-  }, []); // array de dependências. Ele informa ao React quando o 
+  }, [router]); // array de dependências. Ele informa ao React quando o 
   // useEffect deve ser executado novamente
   // [] -> executa apenas uma vez
+  // adiciona router como dependencia
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4">

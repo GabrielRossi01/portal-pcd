@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 
-export default function cadUser() {
+export default function CadUser() {
 
   // Estado para armazenar os dados do formulário (email e senha)
   const [formData, setFormData] = useState<TipoCadastro>({
