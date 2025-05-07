@@ -50,6 +50,7 @@ export default function UpdatePage() {
       setError(null);
       setUserData({ email: '', senha: '' }); // limpa os campos
     } catch (error) {
+      console.log(error)
       setError('Erro ao atualizar dados!');
       setNotification(null);
     }
